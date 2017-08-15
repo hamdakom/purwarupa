@@ -1,0 +1,52 @@
+{
+  "name": "purwarupa",
+  "version": "1.0.0",
+  "description": "Master Purwarupa Proyek Hamda Hikmah Software",
+  "main": "app/index.js",
+  "author": "Hendra Dwi Saputra <hendra@inbox.lv>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p src/server/tsconfig.json",
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dahisoft/purwarupa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dahisoft/purwarupa/issues"
+  },
+  "homepage": "https://github.com/dahisoft/purwarupa#readme",
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "express",
+    "passport",
+    "jwt",
+    "mongodb",
+    "vue",
+    "bulma",
+    "wowjs",
+    "animate"
+  ],
+  "dependencies": {
+    "@types/body-parser": "^1.16.4",
+    "@types/cookie-parser": "^1.4.0",
+    "@types/errorhandler": "0.0.30",
+    "@types/express": "^4.0.36",
+    "@types/method-override": "0.0.29",
+    "@types/morgan": "^1.7.32",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.5.0",
+    "express": "^4.15.4",
+    "method-override": "^2.3.9",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-rc.3",
+    "typescript": "^2.4.2"
+  }
+}
