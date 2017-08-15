@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "build": "tsc -p src/server/tsconfig.json",
+    "postinstall": "npm run build",
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
