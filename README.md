@@ -33,7 +33,7 @@ npm start
 
 Referensi
 ---------
-- [ts-node](http://brianflove.com/2016/11/08/typescript-2-express-node/)
+- [mean-app](http://brianflove.com/2017/07/16/mean-app-server/)
 - [passport-jwt](https://jonathanmh.com/express-passport-json-web-token-jwt-authentication-beginners/)
 - [vue-axios](https://alligator.io/vuejs/rest-api-axios/)
 
