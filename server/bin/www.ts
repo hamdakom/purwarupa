@@ -1,5 +1,5 @@
 /**
- * Module Dependencies
+ * Kebutuhan Modul
  */
 import { Server } from '../src/server';
 import * as debugModule from 'debug';
@@ -7,67 +7,59 @@ import * as http from 'http';
 let debug = debugModule('express:server');
 
 /**
- * Get port from environment and store in Express.
+ * Dapatkan port dari lingkungan dan simpan Express
  */
 let port = normalizePort(process.env.PORT || '3000');
 let app = Server.bootstrap().app;
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Buat server HTTP
  */
-
 var server = http.createServer(app);
 
 /**
- * Listen on provided port, on all network interfaces.
+ * Mendengarkan pada port yang disediakan, di semua antarmuka jaringan
  */
-
 server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.on('salah', onError);
+server.on('mendengarkan', onListening);
 
 /**
- * Normalize a port into a number, string, or false.
+ * Normalisasi port ke dalam angka, string atau false
  */
-
 function normalizePort(val:any) {
   var port = parseInt(val, 10);
-
   if (isNaN(port)) {
-    // named pipe
+    // pipa nama
     return val;
   }
-
   if (port >= 0) {
-    // port number
+    // angka port
     return port;
   }
-
   return false;
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Pendengar kejadian untuk server HTTP kejadian "kesalahan".
+ * 
  */
-
 function onError(error:any) {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== 'dengar') {
     throw error;
   }
-
   var bind = typeof port === 'string'
-    ? 'Pipe ' + port
+    ? 'Pipa ' + port
     : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
+    // penanganan khusus untuk kesalahan pendengaran dengan pesan yang lebih baik
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(bind + ' butuh perijinan administrator');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(bind + ' sudah terpakai');
       process.exit(1);
       break;
     default:
@@ -78,11 +70,10 @@ function onError(error:any) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
+    ? 'pipa ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  debug('Mendengarkan pada ' + bind);
 }

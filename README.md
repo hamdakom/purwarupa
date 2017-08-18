@@ -3,8 +3,8 @@ Pengenalan
 Master Purwarupa Proyek Hamda Hikmah Software yang dibangun dengan aplikasi
 berbasis nodejs dengan framework express dan bahasa typescript. Basisdata
 menggunakan MongoDB yang ditranslasikan menjadi RESTful API dengan tampilan
-vue + bulma + wow + animate. Untuk keamanan akan menggunakan otentikasi yang
-berbasis JSON Web Token dan framework Passport agar lebih aman.
+vue + bulma + owlcarousel + wow + animate. Untuk keamanan akan menggunakan 
+otentikasi berbasis JSON Web Token dan framework Passport agar lebih aman.
 
 [__DEMO__](https://purwarupa.herokuapp.com)
 

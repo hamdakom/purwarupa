@@ -3,11 +3,15 @@ import * as cors from "cors";
 import * as express from "express";
 import * as morgan from "morgan";
 import * as path from "path";
+import * as passport from "passport";
 import errorHandler = require("errorhandler");
 import mongoose = require("mongoose");
 
 // api
-import { HerosApi } from "./api/heros";
+import { MasukApi, strategy } from "./apis/masuk";
+
+// penggunaan strategi dari ./apis/masuk
+passport.use(strategy);
 
 /**
  * The server.
@@ -62,12 +66,12 @@ export class Server {
 
     // root request
     router.get("/", (req: express.Request, res: express.Response, next: express.NextFunction) => {
-      res.json({ announcement: "Welcome to our API." });
+      res.json({ pesan: "Selamat Datang di Purwarupa API." });
       next();
     });
 
     // create API routes
-    HerosApi.create(router);
+    MasukApi.masuk(router);
 
     // wire up the REST API
     this.app.use("/api", router);
@@ -85,15 +89,16 @@ export class Server {
     // morgan middleware to log HTTP requests
     this.app.use(morgan("dev"));
 
-    //use json form parser middlware
-    this.app.use(bodyParser.json());
-
     //use query string parser middlware
     this.app.use(bodyParser.urlencoded({
       extended: true
     }));
 
+    //use json form parser middlware
+    this.app.use(bodyParser.json());
+    
     // connect to mongoose
+    mongoose.Promise = global.Promise;
     let mongodbUri = process.env.MONGOLAB_URI || "mongodb://localhost:27017/purwarupa";
     var options = {
       useMongoClient: true,
@@ -111,6 +116,9 @@ export class Server {
       err.status = 404;
       next(err);
     });
+
+    // Inisialisasi Passport
+    this.app.use(passport.initialize());
 
     //error handling
     this.app.use(errorHandler());
