@@ -6,10 +6,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "tsc -p server/tsconfig.json",
+    "build:server": "tsc -p src/server/tsconfig.json",
+    "build:client": "webpack --config src/client/webpack.config.js",
+    "build": "npm run build:server && npm run build:client",
     "start": "node ./dist/bin/www",
-    "test": "echo \"Gagal : tidak ada tes yang ditentukan\" && exit 1",
-    "postinstall": "npm run build"
+    "clean": "rimraf dist",
+    "test": "echo \"Gagal : tidak ada tes yang ditentukan\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -46,20 +48,33 @@
     "@types/morgan": "^1.7.32",
     "@types/passport": "^0.3.3",
     "@types/passport-jwt": "^2.0.22",
+    "aos": "^2.2.0",
     "body-parser": "^1.17.2",
+    "bulma": "^0.5.1",
     "chai": "^4.1.1",
     "chai-http": "^3.0.0",
     "cors": "^2.8.4",
+    "css-loader": "^0.28.5",
     "errorhandler": "^1.5.0",
     "express": "^4.15.4",
+    "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.30.1",
     "jsonwebtoken": "^7.4.3",
     "lodash": "^4.17.4",
     "mocha": "^3.5.0",
     "mocha-typescript": "^1.1.7",
     "mongoose": "^4.11.7",
     "morgan": "^1.8.2",
+    "owl.carousel": "^2.2.0",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.0",
-    "typescript": "^2.4.2"
+    "rimraf": "^2.6.1",
+    "ts-loader": "^2.3.3",
+    "typescript": "^2.4.2",
+    "vue": "https://github.com/DanielRosenwasser/vue#540a38fb21adb7a7bc394c65e23e6cffb36cd867",
+    "vue-loader": "^12.0.3",
+    "vue-router": "https://github.com/DanielRosenwasser/vue-router#01b8593cf69c2a5077df45e37e2b24d95bf35ce3",
+    "vue-template-compiler": "^2.2.1",
+    "webpack": "^3.5.5"
   }
 }

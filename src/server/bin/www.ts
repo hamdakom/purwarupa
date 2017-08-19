@@ -1,7 +1,7 @@
 /**
  * Kebutuhan Modul
  */
-import { Server } from '../src/server';
+import { Server } from '../app/server';
 import * as debugModule from 'debug';
 import * as http from 'http';
 let debug = debugModule('express:server');

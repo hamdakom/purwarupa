@@ -13,10 +13,10 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
-      "../node_modules/@types/"
+      "../../node_modules/@types/"
     ],
-    "outDir": "../dist",
-    "baseUrl": "./server"
+    "outDir": "../../dist",
+    "baseUrl": "../server"
   },
   "compileOnSave": true,
   "exclude": [
